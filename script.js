@@ -1,29 +1,42 @@
-// Select the button and the paragraph elements
-const changeTextButton = document.getElementById('changeTextButton');
-const dynamicText = document.getElementById('dynamicText');
+ // Functions
+function greetUser(name) {
+  return `Hello, ${name}! Welcome to JavaScript.`;
+}
+console.log(greetUser("Irene"));
 
-// Add an event listener to the button
-changeTextButton.addEventListener('click', () => {
-    // Change the text content of the paragraph
-    dynamicText.textContent = 'The text has been changed dynamically!';
+// Part 2: Control Structures
 
-    // Modify the CSS style of the paragraph
-    dynamicText.style.color = 'blue';
-    dynamicText.style.fontWeight = 'bold';
+// 4. If Statement: Check Voting Eligibility
+let userAge = parseInt(prompt("Enter your age:"));
+if (userAge >= 18) {
+  document.body.innerHTML += "<p>You are eligible to vote.</p>";
+} else {
+  document.body.innerHTML += "<p>You are not eligible to vote yet.</p>";
+}
 
-    // Add a new element dynamically
-    const newElement = document.createElement('p');
-    newElement.textContent = 'This is a new paragraph added dynamically!';
-    newElement.style.color = 'green';
-    newElement.style.marginTop = '10px';
-    document.body.appendChild(newElement);
+// 5. Loops: Display Numbers 1-10
+const numbersList = document.getElementById("numbers");
+for (let i = 1; i <= 10; i++) {
+  const listItem = document.createElement("li");
+  listItem.textContent = i;
+  numbersList.appendChild(listItem);
+}
+
+// Part 3: DOM Manipulation
+
+// Changing HTML Elements
+const title = document.querySelector("h1");
+title.textContent = "JavaScript in Action!";
+
+const dynamicDiv = document.getElementById("dynamic-content");
+dynamicDiv.innerHTML = "<p>This content was added dynamically using JavaScript.</p>";
+
+// Bonus: Interactive Features
+const button = document.getElementById("click-me");
+const dateTimeParagraph = document.getElementById("date-time");
+
+button.addEventListener("click", () => {
+  document.body.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  dateTimeParagraph.textContent = `Current Date & Time: ${new Date().toLocaleString()}`;
 });
-
-// Add functionality for the "Contact" section
-const contactSection = document.createElement('section');
-contactSection.id = 'contact';
-contactSection.innerHTML = `
-    <h2>Contact Us</h2>
-    <p>For more information, email us at <a href="mailto:info@ireneiroha.com">info@ireneiroha.com</a>.</p>
-`;
-document.querySelector('main').appendChild(contactSection);
+ 

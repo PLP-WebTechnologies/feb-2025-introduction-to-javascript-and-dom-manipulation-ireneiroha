@@ -67,6 +67,15 @@ h2 {
     color: #0078d7;
 }
 
+/* Dynamic content styles */
+#dynamic-content {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e8f4fc;
+    border: 1px solid #0078d7;
+    border-radius: 5px;
+}
+
 /* Button styles */
 button {
     background-color: #0078d7;
@@ -76,10 +85,28 @@ button {
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #005a9e;
+}
+
+/* Date and time paragraph styles */
+#date-time {
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Ordered list styles */
+ol {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+ol li {
+    margin-bottom: 5px;
 }
 
 /* Footer styles */
